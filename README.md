@@ -20,12 +20,12 @@ e.g. `{"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}`
 
 Example Usage:
 --------------
-- [project url]/api/timestamp/2015-12-25
-- [project url]/api/timestamp/1450137600
+- [/api/timestamp/2015-12-25](/api/timestamp/2015-12-25)
+- [/api/timestamp/1450137600](/api/timestamp/1450137600)
 
 Example Output:
 ---------------
 `{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}`
 
 
-by freeCodeCamp
+by [freeCodeCamp](freecodecamp.org)

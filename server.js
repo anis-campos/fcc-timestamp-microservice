@@ -2,13 +2,18 @@
 // where your node app starts
 
 // init project
+const fs = require("fs");
 const express = require('express');
 const app = express();
 const showdown = require("showdown");
+const converter = new showdown.Converter();
 
 app.get("/",(req,res)=>{
-  res.send(showdown)
-})
+  fs.readFile('README.md', 'utf8', function(err, contents) {
+      res.send(converter.makeHtml(contents))
+    }    
+  );
+});
 
 app.get("/api/timestamp/:date_string?",(req,res)=>{
   
