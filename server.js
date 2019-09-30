@@ -10,15 +10,15 @@ app.get("/",(req,res)=>{
 })
 
 app.get("/api/timestamp/:date_string?",(req,res)=>{
-
-  const date_string = req.params.date_string || "";
-
-  const date = new Date(date_string);
-
   
-  let rep = err!=null ? {error:"Invalid Date"}:{unix:date.getTime(),utc:date.toUTCString()};
+  const date = new Date(req.params.date_string);
 
+  const [unix,utc] = [date.getTime(),date.toUTCString()];
   
+  const err = isNaN(unix);
+  
+  let rep = err ? {error:utc}:{unix:unix,utc:utc};
+
   res.send(rep);
 });
 
